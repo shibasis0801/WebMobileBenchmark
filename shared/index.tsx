@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { View, Text, Button } from "react-native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { configure } from "./ReactotronConfig";
 
 const HomeScreen = React.lazy(() => import(/* webpackChunkName: 'home' */"./Home.tsx"))
 const PDPScreen = React.lazy(() => import(/* webpackChunkName: 'pdp' */"./PDP.tsx"))
@@ -26,6 +27,7 @@ const PDPScreenRoute = (props: any) => {
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  configure()
   return (
     <NavigationContainer>
       <Stack.Navigator>
